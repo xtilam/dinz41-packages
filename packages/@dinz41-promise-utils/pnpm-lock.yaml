@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@dinz41/safe-promise':
+        specifier: ^1.0.1
+        version: 1.0.1
+
+packages:
+
+  '@dinz41/safe-promise@1.0.1':
+    resolution: {integrity: sha512-Ph0nU0abwspk4qs+wu3iNOrVoPcxbXsyVBsrIw/lxdCEPE5y+a4XoYzIaxgdslRistu96kNaPJdH7hAU/QuEMg==}
+
+snapshots:
+
+  '@dinz41/safe-promise@1.0.1': {}
