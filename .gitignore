@@ -2,4 +2,6 @@
 /out-tgz
 /test
 /ai-context.txt
-node_modules
+/dev
+/deprecated
+node_modules 

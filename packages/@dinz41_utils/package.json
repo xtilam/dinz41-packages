@@ -1,0 +1,44 @@
+{
+  "name": "@dinz41/utils",
+  "version": "1.0.1-beta",
+  "description": "dinz41-utils",
+  "main": "./dist/main.js",
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "types": "./dist/main.d.ts",
+  "scripts": {},
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "esbuild": "^0.25.0",
+    "md5": "^2.3.0",
+    "md5-file": "^5.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtilam/dinz41-packages",
+    "directory": "packages/@dinz41_utils"
+  },
+  "author": "<ztilam60@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    },
+    "./extensions/*": "./dist/extensions/*.js",
+    "./libs/*": "./dist/libs/*.js",
+    "./plugins/*": "./dist/plugins/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "extensions/*": [
+        "./dist/extensions/*.d.ts"
+      ]
+    }
+  }
+}
