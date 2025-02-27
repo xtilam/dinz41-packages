@@ -1,10 +1,19 @@
-export const dinz41: Dinz41.Extensions = { files: {} } as any;
+export const dinz41 = {
+  files: {},
+  nodeModules: {},
+  process: {},
+  
+} as Dinz41.Extensions;
 
 declare global {
   namespace Dinz41 {
     interface Extensions {
       files: ExtensionsFiles;
+      nodeModules: ExtensionsNodeModules;
+      process: ExtensionsChildProcess;
     }
     interface ExtensionsFiles {}
+    interface ExtensionsNodeModules {}
+    interface ExtensionsChildProcess {}
   }
 }

@@ -1,8 +1,8 @@
 import path from "path";
-import { __DIRS } from "./dirs-defines.mjs";
+import { __DIRS } from "./dirs-defines";
+import { BuildOptions } from "esbuild";
 
-/**@type {import("esbuild").BuildOptions} */
-export const buildConfigs = {
+const buildConfigs: BuildOptions = {
   entryPoints: [path.join(__DIRS.src, "/**/*.ts")],
   outdir: __DIRS.dist,
   bundle: false,
@@ -11,3 +11,5 @@ export const buildConfigs = {
   sourcemap: "inline",
   outExtension: { ".js": ".js" },
 };
+
+export default buildConfigs;

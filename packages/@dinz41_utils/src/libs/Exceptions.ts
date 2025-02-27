@@ -39,9 +39,9 @@ class ExceptionResult<T, E> extends Array implements IExceptionResult<T, E> {
   }
 }
 
-class BaseError<N> extends Error {
+export class BaseError<N> extends Error {
   declare type: N;
-  static init<T extends new (...args: any) => BaseError<string>>(
+  static init<T extends new (...args: any) => BaseError<any>>(
     this: T,
     type: InstanceType<T>["type"]
   ) {
@@ -69,8 +69,19 @@ class ExecuteError extends BaseError<"ExecuteError"> {
 }
 
 // ----------------------------------------------
+export type ExtendsErrors<T, E = never> = Exclude<
+  T extends (...args: any[]) => infer R ? UnWrapExceptions<R> : ExecuteError,
+  E
+>;
+
+type UnWrapExceptions<T> = T extends ExceptionResultWrapper<unknown, infer E>
+  ? E
+  : T extends Promise<any>
+  ? UnWrapExceptions<Awaited<T>>
+  : ExecuteError;
+
 type ExceptionHandler = <D extends BaseError<any>, T = any>(
-  callback: () => T,
+  callback: () => T | Promise<T>,
   errors?: D
 ) => T extends Promise<any>
   ? Promise<ExceptionResultWrapper<Awaited<T>, D>>

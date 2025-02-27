@@ -1,0 +1,1 @@
+console.log('call dev', process.argv)

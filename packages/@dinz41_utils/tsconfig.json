@@ -9,10 +9,11 @@
     "noUnusedParameters": true,
     "allowImportingTsExtensions": false,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDirs": ["./src"],
     "emitDeclarationOnly": true,
     "declaration": true,
+    "allowUmdGlobalAccess": true
   },
-  "include": ["./src/**/*.ts", "./test/**/*.ts"],
-  "exclude": ["./test"]
+  "include": ["./src", "./test", "./dev"],
+  "exclude": ["node_modules", "./dev", "./test"]
 }

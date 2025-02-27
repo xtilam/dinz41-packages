@@ -1,6 +1,7 @@
 import { dinz41 } from "../main.js";
 
 /**
+ * Delay for a number of milliseconds.
  * @param ms milliseconds
  */
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

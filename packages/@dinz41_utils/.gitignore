@@ -3,3 +3,5 @@
 /tsconfig.tsbuildinfo
 /temp
 /test
+/cli
+/wcli

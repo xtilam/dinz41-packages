@@ -1,10 +1,9 @@
 import { fork } from "child_process";
 import esbuild from "esbuild";
 import fs from "fs/promises";
-import { buildConfigs } from "../common/build-configs.mjs";
-import { __DIRS } from "../common/dirs-defines.mjs";
-import utils from "../utils/utils.mjs";
-import path from "path";
+import buildConfigs from "../common/build-configs";
+import { __DIRS } from "../common/dirs-defines";
+import { utils } from "../utils/utils";
 
 async function main() {
   await clearDist();
@@ -24,7 +23,11 @@ async function main() {
   }
   async function buildDTS() {
     console.log("Building DTS...");
-    const tscScript = await utils.findNodeCli("typescript", "tsc");
+    const tscScript = await utils.nodeModules.findNodeCli(
+      __DIRS.project,
+      "typescript",
+      "tsc"
+    );
     const tscProgress = fork(tscScript, ["--build"], {
       stdio: "inherit",
       cwd: __DIRS.project,
@@ -32,6 +35,6 @@ async function main() {
     await utils.process.wait(tscProgress);
     console.log("Built DTS.");
   }
-}
+} 
 
 main();

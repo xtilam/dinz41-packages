@@ -5,10 +5,14 @@
   "main": "./dist/main.js",
   "type": "module",
   "files": [
-    "./dist"
+    "./dist",
+    "README.md"
   ],
   "types": "./dist/main.d.ts",
-  "scripts": {},
+  "scripts": {
+    "watch-init-cli": "tsx --watch dev/init-cli.ts",
+    "init-cli": "tsx dev/init-cli.ts"
+  },
   "keywords": [],
   "devDependencies": {
     "@types/node": "^22.13.5",
