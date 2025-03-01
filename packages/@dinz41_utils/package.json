@@ -1,9 +1,10 @@
 {
   "name": "@dinz41/utils",
-  "version": "1.0.1-beta",
+  "version": "1.0.3-beta",
   "description": "dinz41-utils",
   "main": "./dist/main.js",
   "type": "module",
+  "private": false,
   "files": [
     "./dist",
     "README.md"
