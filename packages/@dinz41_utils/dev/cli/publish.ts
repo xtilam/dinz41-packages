@@ -1,8 +1,8 @@
-import { utils } from "../utils/utils";
+import { utils } from "../utils/utils.js";
 import { spawn } from "child_process";
 
 async function main() {
-  await import("./build");
+  await import("./build.js");
   const publishTask = spawn("npm", ["publish", "--access=public"], {
     shell: true,
     stdio: "inherit",

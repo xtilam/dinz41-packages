@@ -27,7 +27,8 @@ const readJSON = async <T>(filePath: string) => {
 const writeJSON = async (
   filePath: string,
   data: any,
-  shouldCheckDirectory = true
+  shouldCheckDirectory = true,
+  beautify = false
 ) => {
   if (shouldCheckDirectory) {
     const dir = path.dirname(filePath);
@@ -37,7 +38,11 @@ const writeJSON = async (
     if (!stat.isDirectory())
       throw new Error(`Parent path is not a directory: ${dir}`);
   }
-  await fs.writeFile(filePath, data, "utf-8");
+  await fs.writeFile(
+    filePath,
+    JSON.stringify(data, null, beautify ? "\t" : ""),
+    "utf-8"
+  );
 };
 // ----------------------------------------------
 Object.assign(dinz41.files, { readJSON, writeJSON });

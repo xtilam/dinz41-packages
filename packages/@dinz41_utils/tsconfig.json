@@ -1,19 +1,10 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "skipLibCheck": true,
-    "moduleResolution": "nodenext",
-    "module": "NodeNext",
-    "target": "ESNext",
-    "strict": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "allowImportingTsExtensions": false,
     "outDir": "./dist",
-    "rootDirs": ["./src"],
     "emitDeclarationOnly": true,
     "declaration": true,
     "allowUmdGlobalAccess": true
   },
-  "include": ["./src", "./test", "./dev"],
-  "exclude": ["node_modules", "./dev", "./test"]
+  "include": ["./src/**/*.ts"]
 }

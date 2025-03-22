@@ -59,6 +59,7 @@ class MD5File {
 }
 // ----------------------------------------------
 Object.assign(dinz41.files, { MD5File, md5 });
+dinz41.md5 = md5;
 // ----------------------------------------------
 declare global {
   namespace Dinz41 {

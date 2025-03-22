@@ -1,16 +1,16 @@
 import { fork } from "child_process";
 import esbuild from "esbuild";
 import fs from "fs/promises";
-import buildConfigs from "../common/build-configs";
-import { __DIRS } from "../common/dirs-defines";
-import { utils } from "../utils/utils";
+import buildConfigs from "../common/build-configs.js";
+import { __DIRS } from "../common/dirs-defines.js";
+import { utils } from "../utils/utils.js";
 
 async function main() {
-  await clearDist();
+  await clearDistDir();
   await Promise.all([buildJS(), buildDTS()]);
   console.log("Build completed.");
   // ----------------------------------------------
-  async function clearDist() {
+  async function clearDistDir() {
     console.log("Clearing dist folder...");
     if ((await fs.stat(__DIRS.dist).safe()).value)
       await fs.rm(__DIRS.dist, { recursive: true });
@@ -18,7 +18,7 @@ async function main() {
   }
   async function buildJS() {
     console.log("Building JS...");
-    await esbuild.build({ ...buildConfigs });
+    await esbuild.build({ ...buildConfigs, minify: true });
     console.log("Built JS.");
   }
   async function buildDTS() {
@@ -35,6 +35,6 @@ async function main() {
     await utils.process.wait(tscProgress);
     console.log("Built DTS.");
   }
-} 
+}
 
 await main();

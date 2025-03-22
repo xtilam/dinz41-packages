@@ -1,5 +1,5 @@
 import path from "path";
-import { __DIRS } from "./dirs-defines";
+import { __DIRS } from "./dirs-defines.js";
 import { BuildOptions } from "esbuild";
 
 const buildConfigs: BuildOptions = {
