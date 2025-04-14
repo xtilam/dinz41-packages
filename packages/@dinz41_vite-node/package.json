@@ -1,0 +1,51 @@
+{
+  "name": "@dinz41/vite-node",
+  "version": "1.0.7-beta",
+  "description": "",
+  "main": "./dist/ViteNode.cjs",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "scripts": {
+    "test": "cd ./examples/node-app && "
+  },
+  "bin": {
+    "dinz-vite-node": "./dist/cli.mjs"
+  },
+  "keywords": [],
+  "peerDependencies": {
+    "vite": "^4.2.0 || ^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/ws": "^8.18.0",
+    "chokidar": "^4.0.3",
+    "commander": "^13.1.0",
+    "esbuild": "^0.25.1",
+    "picocolors": "^1.1.1",
+    "typescript": "^5.8.2",
+    "ws": "^8.18.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.mjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/main.d.ts"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtilam/dinz41-packages",
+    "directory": "packages/@dinz41_utils"
+  },
+  "author": "<ztilam60@gmail.com>",
+  "license": "MIT"
+}
